@@ -41,8 +41,29 @@ describe("adding floats", () => {
 
 // Strings
 describe("String tests", () => {
-  it("0.1 + 0.2", () => {
-    const value = 0.1 + 0.2;
-    expect(value).toBeCloseTo(0.3);
+  it("there is no I in team", () => {
+    expect("team").not.toMatch(/i/);
+  });
+});
+
+// Arrays
+describe("Array tests", () => {
+  it("Milk should appear in shopping list array", () => {
+    const shoppingList = ["paper Towels", "Milk", "Bread", "Apples", "Beers"];
+    expect(shoppingList).toContain("Milk");
+  });
+});
+
+function compilesAndroidCode() {
+  throw new Error("You are using the wrong JDK!!!");
+}
+
+// Exceptions
+describe("Exceptions", () => {
+  it("compiling android goes as expected", () => {
+    expect(() => compilesAndroidCode()).toThrow(Error);
+    expect(() => compilesAndroidCode()).toThrow(
+      "You are using the wrong JDK!!!"
+    );
   });
 });
