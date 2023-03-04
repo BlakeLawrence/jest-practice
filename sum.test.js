@@ -77,7 +77,7 @@ afterEach(() => {
 });
 
 describe("setup and tear down", () => {
-  it("array length should start wat 4", () => {
+  it("array length should start at 4", () => {
     expect(animals.length).toBe(4);
   });
 });
@@ -90,6 +90,6 @@ describe("setup and tear down", () => {
     expect(animals[animals.length - 1]).toBe("tiger");
   });
 });
-it("array should now contain original animals data afetr tear down", () => {
+it("array should now contain original animals data after tear down", () => {
   expect(animals.length).toBe(4);
 });
