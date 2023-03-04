@@ -67,3 +67,29 @@ describe("Exceptions", () => {
     );
   });
 });
+
+// setup and tear down tests
+
+let animals = ["monkey", "shark", "hippo", "giraffe"];
+
+afterEach(() => {
+  animals = ["monkey", "shark", "hippo", "giraffe"];
+});
+
+describe("setup and tear down", () => {
+  it("array length should start wat 4", () => {
+    expect(animals.length).toBe(4);
+  });
+});
+
+describe("setup and tear down", () => {
+  it("should add an animal to end of array", () => {
+    animals.push("tiger");
+    console.log("animals after push:", animals);
+    expect(animals.length).toBe(5);
+    expect(animals[animals.length - 1]).toBe("tiger");
+  });
+});
+it("array should now contain original animals data afetr tear down", () => {
+  expect(animals.length).toBe(4);
+});
